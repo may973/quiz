@@ -1,0 +1,2 @@
+Sistema de Quiz em Python
+Aplicação de quiz em modo terminal desenvolvida em Python, com foco em avaliação de conhecimentos gerais. O sistema possui perguntas personalizáveis, normalização de respostas, tentativas controladas, registro de resultados em arquivo CSV, geração de relatórios em HTML e painel administrativo exclusivo para o criador. Inclui recursos de persistência de dados, estatísticas de desempenho e interface textual aprimorada com cores ANSI.
