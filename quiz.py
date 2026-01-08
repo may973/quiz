@@ -5,7 +5,7 @@ import os
 import csv
 from datetime import datetime
 
-# ----- Utilities -----
+
 
 def normalize(text):
     if not isinstance(text, str):
@@ -14,7 +14,7 @@ def normalize(text):
     nfkd = unicodedata.normalize('NFD', text)
     return ''.join(ch for ch in nfkd if unicodedata.category(ch) != 'Mn')
 
-# ANSI colors
+
 RESET = '\033[0m'
 RED = '\033[31m'
 GREEN = '\033[32m'
@@ -23,7 +23,7 @@ BLUE = '\033[34m'
 CYAN = '\033[36m'
 BOLD = '\033[1m'
 
-# ----- Default questions -----
+
 DEFAULT_QUESTIONS = [
     {'q': 'Qual é a capital do Brasil?', 'a': 'brasilia', 'disp': 'Brasília'},
     {'q': 'Quanto é 5 x 8?', 'a': '40'},
@@ -47,7 +47,7 @@ DEFAULT_QUESTIONS = [
     {'q': 'Qual é o principal ingrediente do guacamole?', 'a': 'abacate', 'disp': 'Abacate'},
 ]
 
-# ----- Persistence -----
+
 
 def load_questions(filename='questions.json'):
     if os.path.exists(filename):
@@ -69,7 +69,7 @@ def save_questions(questions_list, filename='questions.json'):
     except Exception:
         return False
 
-# ----- Output helpers -----
+
 
 def print_banner():
     print(CYAN + '=' * 40 + RESET)
@@ -168,10 +168,10 @@ def show_stats(filename='resultados_quiz.csv'):
     avg = sum_scores / total_runs
     return {'runs': total_runs, 'best': best, 'avg': avg}
 
-# ----- Edit questions menu (for creator) -----
+
 
 def edit_questions_menu(questions):
-    # interactive; kept simple
+  
     while True:
         print(CYAN + '\n--- Editar Perguntas ---' + RESET)
         print('1) Listar perguntas')
@@ -229,7 +229,6 @@ def edit_questions_menu(questions):
         else:
             print(YELLOW + 'Opção inválida.' + RESET)
 
-# ----- Quiz runtime -----
 
 def ask_retry_struct(qobj):
     print(BLUE + qobj['q'] + RESET)
@@ -313,3 +312,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
